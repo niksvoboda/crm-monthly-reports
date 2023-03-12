@@ -1,0 +1,19 @@
+{
+  "name": "crm-montly-reports",
+  "version": "1.0.0",
+  "description": "crm for generating monthly reports on the scope of work of an outsourcing company",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "start": "nodemon app.js"
+  },
+  "author": "Nikita Popov",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^2.0.3",
+    "config": "^3.3.9",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0"
+  }
+}
