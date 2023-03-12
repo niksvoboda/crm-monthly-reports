@@ -22,7 +22,7 @@ module.exports = function (req, res, next) {
                  return res.status(401).json({message: "не авторизован"})
                 }
             
-                });
+            });
         }
        
     } catch (error) {
