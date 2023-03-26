@@ -22,7 +22,7 @@
     "host": "127.0.0.1",
     "user": "root",
     "password": "",
-    "database": "app_new",
+    "database": "crm_dinatech",
     "port": 3306
   }
 }
