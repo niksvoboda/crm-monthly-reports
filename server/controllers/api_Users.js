@@ -1,4 +1,5 @@
-const Log           = require("../components/log.js");
+const Log  = require("../components/log.js"); 
+const Users  = require("../models/_users"); 
     /**
      * Класс данных для страницы заказчиков
      */
@@ -8,9 +9,15 @@ class Api_Users extends Log {
 
     async getEntrys(req, res) {
         self.d(".getEntrys");
+        
         try {
+        const {start, length, search} = req.query;
+        const result = await Users.getEntrys(search);
           let response = {
-            status: "OK"
+            status: "OK",
+            data: result.slice(Number(start), Number(start)+Number(length)),
+            total_entrys: result?.length,
+            
             }
             return res.status(200).json(response)
         } catch (error) {

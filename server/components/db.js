@@ -1,5 +1,6 @@
 const mysql = require("mysql2");
 const Log   = require("./log.js");
+const config = require("config");
 /**
  * Класс для доступа к БД
  */
@@ -9,6 +10,7 @@ class Db extends Log {
     charset = 'utf8_general_ci';
     enable = false;
     constructor(app){
+        super();
         this.app = app;
         /**Создаем пул подключений */
         this.connect(

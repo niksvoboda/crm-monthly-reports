@@ -1,8 +1,14 @@
-const Router                    = require('express');
-const router                    = new Router();
+const Router            = require('express');
+const router            = new Router();
 
-const Api_Customers    = require('../controllers/api_Customers')
-const Api_Users    = require('../controllers/api_Users')
+const Auth_Controller   =  require('../controllers/auth_Controller')
+const Api_Customers     = require('../controllers/api_Customers')
+const Api_Users         = require('../controllers/api_Users')
+
+//auth
+router.post('/login', Auth_Controller.login);
+router.post('/logout', Auth_Controller.logout);
+router.post('/check', Auth_Controller.check);
 
 //customers
 router.get('/customers/customers', Api_Customers.getEntrys);  

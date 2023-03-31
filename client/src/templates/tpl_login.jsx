@@ -1,10 +1,37 @@
-import React, { useContext } from 'react';
+import React, {useState, useContext, useEffect} from "react";
+import { useNavigate} from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import { UserContext } from '../contex';
+import { login, logout } from "../http/auth_user";
+import { useSnackbar } from 'react-simple-snackbar';
+import { option_green_snackbar, option_red_snackbar } from '../components/UI/Snackbar';
 
 const Tpl_login = () => {
-    const now_year = new Date().getFullYear();
-    //console.log(now_year);
-    const {user, setUser} = useContext(UserContext)
+const now_year = new Date().getFullYear();
+
+  /** Всплывающее сообщение */
+  const [openGreen, closeGreen] = useSnackbar(option_green_snackbar)
+  const [openRed, closeRed] = useSnackbar(option_red_snackbar)    
+  /** при логине страницы узнаем если пользователь имеет действительный токен то подтягиваем все данные */
+  const {user, setUser} = useContext(UserContext)
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('');
+  const logIn = async () => {
+      try{
+           const data = await login(username, password)
+           const decode = jwt_decode(data)
+           if (decode?.id) {
+              localStorage.setItem('token', data);
+              
+              setUser({id:decode.id, username: decode.username, login: decode.login, permissions: JSON.parse(decode.permissions),  isAuth: true})
+           }
+           navigate("/")
+      } catch (e) {
+          openRed(e.response.data.message)
+      } 
+  }
+
     const Auth = () =>{
       setUser({username: null, login:'nul1l', isAuth: true, role: 0, permissions:{}})
     }
@@ -50,11 +77,21 @@ const Tpl_login = () => {
                 <form role="form" className="text-start">
                   <div className="input-group input-group-outline my-3">
                     <label className="form-label">Email</label>
-                    <input type="email" className="form-control"/>
+                    <input 
+                    type="email" 
+                    className="form-control"
+                    value = {username}
+                    onChange = {e=> setUsername(e.target.value)}
+                    />
                   </div>
                   <div className="input-group input-group-outline mb-3">
                     <label className="form-label">Password</label>
-                    <input type="password" className="form-control"/>
+                    <input 
+                    type="password" 
+                    className="form-control"
+                    value = {password}
+                    onChange = {e=> setPassword(e.target.value)}
+                    />
                   </div>
                   <div className="form-check form-switch d-flex align-items-center mb-3">
                     <input className="form-check-input" type="checkbox" id="rememberMe" />
@@ -62,7 +99,7 @@ const Tpl_login = () => {
                   </div>
                   <div className="text-center">
                     <button type="button" 
-                    onClick={event=>Auth()}
+                    onClick ={e => logIn()}
                     className="btn bg-gradient-primary w-100 my-4 mb-2">Вход</button>
                   </div>
                   <p className="mt-4 text-sm text-center">

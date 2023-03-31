@@ -13,7 +13,7 @@ class App  extends Log{
     constructor(app){
         super();
         this.app = app;
-         app.use(cors());
+        app.use(cors());
         /** Подключаем возможность обращения к нашему API с помощью JSON-запросов */
         app.use(express.json())
         /** Подключаем роутер API */

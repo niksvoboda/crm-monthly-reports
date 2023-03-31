@@ -10,6 +10,7 @@ import Projects from "../pages/projects/projects";
 import Users from "../pages/users/users";
 import Settings from "../pages/settings/settings";
 import Profile from "../pages/profile/profile";
+import LogoutPage from "../pages/logout_page";
 
 const AppRouter = () =>{ 
 
@@ -25,7 +26,7 @@ const authRoutes = [
             {path: PROJECTS_ROUTE, element: <Tpl_main page = {<Projects/>}/>},
             {path: PROFILE_ROUTE, element: <Tpl_main page = {<Profile/>}/>},
             {path: SETTINGS_ROUTE, element: <Tpl_main page = {<Settings/>}/>},
-            {path: LOGOUT_ROUTE, element: <Tpl_main />},
+            {path: LOGOUT_ROUTE, element: <Tpl_main page = {<LogoutPage/>}/>},
             {path: '*', element: <Navigate to="/" replace/>}
       ]
      //   console.log(user?.permissions?.logs_read)

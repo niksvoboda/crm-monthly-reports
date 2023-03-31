@@ -10,7 +10,7 @@ const [side_conf_show, set_side_conf_show] = useState(false);
 return (
 <>
 <Aside/>
-<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+<main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 <Navbar/>
 {page}
 <Footer/>

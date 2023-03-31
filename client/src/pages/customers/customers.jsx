@@ -8,7 +8,7 @@ const Customers = () => {
             <div className="card my-4">
               <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div className="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                  <h6 className="text-white text-capitalize ps-3">Authors table</h6>
+                  <h6 className="text-white text-capitalize ps-3">Пользователи</h6>
                 </div>
               </div>
               <div className="card-body px-0 pb-2">
@@ -47,7 +47,7 @@ const Customers = () => {
                           <span className="text-secondary text-xs font-weight-bold">23/04/18</span>
                         </td>
                         <td className="align-middle">
-                          <a href="javascript:;" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <a className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                           </a>
                         </td>
@@ -75,7 +75,7 @@ const Customers = () => {
                           <span className="text-secondary text-xs font-weight-bold">11/01/19</span>
                         </td>
                         <td className="align-middle">
-                          <a href="javascript:;" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <a className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                           </a>
                         </td>
@@ -103,7 +103,7 @@ const Customers = () => {
                           <span className="text-secondary text-xs font-weight-bold">19/09/17</span>
                         </td>
                         <td className="align-middle">
-                          <a href="javascript:;" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <a className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                           </a>
                         </td>
@@ -131,7 +131,7 @@ const Customers = () => {
                           <span className="text-secondary text-xs font-weight-bold">24/12/08</span>
                         </td>
                         <td className="align-middle">
-                          <a href="javascript:;" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <a className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                           </a>
                         </td>
@@ -159,7 +159,7 @@ const Customers = () => {
                           <span className="text-secondary text-xs font-weight-bold">04/10/21</span>
                         </td>
                         <td className="align-middle">
-                          <a href="javascript:;" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <a className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                           </a>
                         </td>
@@ -187,7 +187,7 @@ const Customers = () => {
                           <span className="text-secondary text-xs font-weight-bold">14/09/20</span>
                         </td>
                         <td className="align-middle">
-                          <a href="javascript:;" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <a className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                           </a>
                         </td>
